@@ -8,3 +8,15 @@ function toggleMenu() {
 function navigateToContact() {
   window.location.href = '#contact';
 }
+
+function navigateToExperience() {
+  window.location.href = '#experience';
+}
+
+function navigateToProjects() {
+  window.location.href = '#projects';
+}
+
+function navigateToContact() {
+  window.location.href = '#contact';
+}
