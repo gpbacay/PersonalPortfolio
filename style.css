@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-    font-family: 'Product Sans', sans-serif;
+    font-family: 'Poppins Sans', sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -451,7 +451,6 @@ section {
 }
 
 .section__text__p1 {
-  text-align: justify;
     font-size: 1.75rem;
   }
   
@@ -460,10 +459,9 @@ section {
 }
 
 .section__text__p2 {
-  background: linear-gradient(to right, rgb(131, 83, 229) 0%, rgb(12, 184, 208) 100%);
+  background: linear-gradient(to right, rgb(131, 83, 229) 40%, rgb(12, 184, 208)100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-align: justify;
     font-size: 40px;
   margin-bottom: 1rem;
   
@@ -471,7 +469,6 @@ section {
 
 .title {
   font-size: 3rem;
-  text-align: justify;
 }
 
 #socials-container {

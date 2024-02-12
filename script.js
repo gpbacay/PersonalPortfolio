@@ -17,7 +17,7 @@ const createChatLi = (message, className) => {
     //Create a chat <li> element with passed message and className
     const chatLi = document.createElement("li");
     chatLi.classList.add("chat", className);
-    let chatContent = className === "outgoing" ? `<p></p>` : `<span><img src="assets/bot_icon.png"/></span><p></p>`;
+    let chatContent = className === "outgoing" ? `<p></p>` : `<span><img src="assets/bot_icon.gif"/></span><p></p>`;
     chatLi.innerHTML = chatContent;
     chatLi.querySelector("p").textContent = message;
     return chatLi;
@@ -143,13 +143,10 @@ scrollDownButton.addEventListener('click', () => {
 });
 sendChatBtn.addEventListener("click", handleChat);
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+chatbotToggler.click();
 chatbotCloseBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 scrollDownButton.addEventListener('click', () => chatbox.scrollTo(0, chatbox.scrollHeight));
 chatbox.addEventListener('scroll', toggleScrollButtonVisibility);
-
-
-
-
 
 
 
