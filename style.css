@@ -561,9 +561,10 @@ section {
 }
 
 .arrow {
+  display: flex;
   position: absolute;
-  right: -5rem;
-  bottom: 2.5rem;
+  right: -5%;
+    top: 50%;
 }
 
 .details-container {
