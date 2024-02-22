@@ -512,7 +512,7 @@ section {
 
 .btn-color-1,
 .btn-color-2:hover {
-  background: rgb(52,41,77);
+  background: rgb(127, 0, 255);
   color: white;
 }
 
@@ -578,15 +578,14 @@ section {
   
 }
 
+.color-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .section-container {
   gap: 4rem;
   height: 80%;
-}
-
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
 }
 
 /* EXPERIENCE SECTION */
@@ -635,13 +634,14 @@ article .icon {
 }
 
 .color-container {
-  border-color: black;
-  background: black;
+  border: none;
+    background: rgba(19, 19, 20, 1);
+    backdrop-filter: blur(32px);
 }
 
 .project-img {
   border-radius: 2rem;
-  width: 90%;
+  width: 100%;
   height: 90%;
 }
 
