@@ -293,7 +293,6 @@ a,
 nav,
 .nav-links {
   display: flex;
-  background-color: salmon;
 }
 
 nav {
@@ -429,8 +428,7 @@ section {
   display: flex;
   justify-content: center;
   gap: 5rem;
-  height: 80vh;
-  background-color: skyblue;
+  margin-top: 2rem;
 }
 
 .section__pic-container {
@@ -539,7 +537,6 @@ section {
 
 #about {
   position: relative;
-  background-color: lightseagreen;
     margin-top: 2rem;
 }
 
@@ -598,7 +595,6 @@ section {
   position: relative;
   color: rgb(116,83,186);
   display: flexbox;
-  background-color: salmon;
     margin-top: 2rem;
 }
 
@@ -637,7 +633,6 @@ article .icon {
 
 #projects {
   position: relative;
-  background-color: lightgreen;
     margin-top: 2rem;
 }
 
@@ -670,7 +665,6 @@ article .icon {
   justify-content: center;
   flex-direction: column;
   height: 70vh;
-  background-color: lightslategray;
     margin-top: 2rem;
 }
 
