@@ -9,7 +9,7 @@ const scrollDownButton = document.querySelector('.scroll-down-button');
 // $('.chatbot-toggler span').draggable();
 
 let userMessage;
-const API_KEY = "AIzaSyA3GUmbID8MX4usE9488WuACdsvGk_Q0p0"
+const API_KEY = "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"
 const inputInitHeight = chatInput.scrollHeight;
 const chatInputContainerInitHeight = chatInputContainer.scrollHeight;
 
@@ -23,35 +23,25 @@ const createChatLi = (message, className) => {
     return chatLi;
 }
 
-const generateResponse = async (botChatLi, userMessage) => {
-    const API_URL = "https://generativelanguage.googleapis.com/v1beta2/models/chat-bison-001:generateMessage?key=" + API_KEY;
-    const messageElement = botChatLi.querySelector("p");
+const generateResponse = async (incomingChatLi) => {
+    const API_URL = "https://api.openai.com/v1/chat/completions";
+    const messageElement = incomingChatLi.querySelector("p");
 
     //Define the properties and message for the API request
     const requestOptions = {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            "Authorization": `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
-            prompt:{
-                content:"",
-                examples:[],
-                messages:[
-                    {
-                        content: userMessage,
-                    },
-                ],
-            },
-            temperature: 0.5,
-            top_k: 40,
-            top_p: 0.95,
-            candidate_count: 1,
+            model: "gpt-3.5-turbo",
+            messages: [{role:"user",content:userMessage}]
         }),
-    };
+    }
     
     // Send POST request to API, get response
-    await fetch(API_URL, requestOptions)
+    fetch(API_URL, requestOptions)
     .then(res => res.json())
     .then(data => {
         if (
@@ -95,11 +85,10 @@ const handleChat = () => {
     chatbox.scrollTo(0, chatbox.scrollHeight)
 
     setTimeout(() => {
-        const botChatLi = createChatLi("Thinking...", "incoming")
-        chatbox.appendChild(botChatLi);
+        const incomingChatLi = createChatLi("Thinking...", "incoming")
+        chatbox.appendChild(incomingChatLi);
+        generateResponse(incomingChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight)
-        
-        generateResponse(botChatLi, userMessage);
     }, 500);
 }
 

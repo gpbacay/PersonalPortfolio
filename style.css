@@ -293,6 +293,7 @@ a,
 nav,
 .nav-links {
   display: flex;
+  background-color: salmon;
 }
 
 nav {
@@ -429,6 +430,7 @@ section {
   justify-content: center;
   gap: 5rem;
   height: 80vh;
+  background-color: skyblue;
 }
 
 .section__pic-container {
@@ -537,6 +539,8 @@ section {
 
 #about {
   position: relative;
+  background-color: lightseagreen;
+    margin-top: 2rem;
 }
 
 .about-containers {
@@ -557,7 +561,7 @@ section {
 
 .about-pic {
   border-radius: 2rem;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .arrow {
@@ -594,6 +598,8 @@ section {
   position: relative;
   color: rgb(116,83,186);
   display: flexbox;
+  background-color: salmon;
+    margin-top: 2rem;
 }
 
 .experience-sub-title {
@@ -631,6 +637,8 @@ article .icon {
 
 #projects {
   position: relative;
+  background-color: lightgreen;
+    margin-top: 2rem;
 }
 
 .color-container {
@@ -662,6 +670,8 @@ article .icon {
   justify-content: center;
   flex-direction: column;
   height: 70vh;
+  background-color: lightslategray;
+    margin-top: 2rem;
 }
 
 .contact-info-upper-container {
