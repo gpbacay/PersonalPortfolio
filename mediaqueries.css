@@ -7,11 +7,9 @@
     border-radius: 0;
     margin-left: 100px;
   }
-
   .chatbot .chatbox {
     height: 100%;
   }
-
   .chatbot header span {
     display: block;
     min-width: 300;
