@@ -6,7 +6,9 @@ const chatbotCloseBtn = document.querySelector(".close-icon1");
 const chatInputContainer = document.querySelector(".chatbot .chat-input");
 const scrollDownButton = document.querySelector('.scroll-down-button');
 
-// $('.chatbot-toggler span').draggable();
+const desktopNav = document.getElementById("desktop-nav");
+const footerNav = document.querySelector(".footer-nav");
+
 
 let userMessage;
 const API_KEY = "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"
@@ -139,11 +141,6 @@ chatbox.addEventListener('scroll', toggleScrollButtonVisibility);
 
 
 
-
-
-
-
-
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
@@ -166,3 +163,141 @@ function navigateToProjects() {
 function navigateToContact() {
   window.location.href = '#contact';
 }
+
+
+window.addEventListener("scroll", () => {
+    const isDesktopNavVisible = isElementVisible(desktopNav);
+    const isScrolledDown = window.scrollY > 0;
+    const isResponsiveView = window.innerWidth <= 1200;
+
+    if ((!isDesktopNavVisible && isScrolledDown) || (isResponsiveView && isScrolledDown)) {
+        footerNav.classList.add('show');
+        footerNav.classList.remove('hide');
+    } else {
+        footerNav.classList.remove('show');
+        footerNav.classList.add('hide');
+    }
+});
+
+function isElementVisible(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+
+
+
+// Function for name title typing animation
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+const sectionTextElements = document.querySelectorAll(".section-text, .name-title");
+const texts = ["AI RESEARCHER", "TECH ENTHUSIAST", "TECHNOPRENEUR","IT PROJECT MANAGER", "SOFTWARE ENGINEER", "FULL STACK DEVELOPER"];
+let currentIndex = 0;
+
+const updateTextWithTypingEffect = (element, text) => {
+    let iterations = 0;
+    const intervalDuration = 40;
+    clearInterval(element.interval);
+
+    element.interval = setInterval(() => {
+        element.innerText = text.split("").map((letter, index) => {
+            if (index < iterations) {
+                return text[index];
+            }
+            return letters[Math.floor(Math.random() * 36)];
+        }).join("");
+
+        if (iterations >= text.length) { 
+            clearInterval(element.interval);
+        }
+        iterations += 1 / 3;
+    }, intervalDuration);
+};
+
+const updateText = () => {
+    sectionTextElements.forEach((element, index) => {
+        const text = texts[(currentIndex + index) % texts.length];
+        element.dataset.value = text;
+        updateTextWithTypingEffect(element, text);
+    });
+    currentIndex = (currentIndex + 1) % texts.length;
+};
+
+updateText();
+setInterval(updateText, 3500);
+
+
+
+// Function for element typing animation
+const startTypingAnimation = target => {
+    let iterations = 0;
+    const intervalDuration = 30;
+    clearInterval(target.interval);
+    target.interval = setInterval(() => {
+        target.innerText = target.innerText.split("").map((letter, index) => {
+            if (index < iterations) {
+                return target.dataset.value[index];
+            }
+            return letters[Math.floor(Math.random() * 36)];
+        }).join("");
+
+        if (iterations >= (target.dataset.value || "").length) {
+            clearInterval(target.interval);
+        }
+        iterations += 1 / 3;
+    }, intervalDuration);
+};
+
+document.querySelectorAll(
+    "#about .title, #experience .title, #projects .title, #contact .title")
+.forEach(element => {
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startTypingAnimation(entry.target);
+            } else {
+                clearInterval(entry.target.interval);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+});
+
+chatbotToggler.addEventListener("click", () => {
+    const h2Element = document.querySelector(".chatbot h2");
+    const defaultText = "HARAYA";
+    startTypingAnimation(h2Element, defaultText);
+});
+
+
+// Function for current section view indicator
+const navLinks = document.querySelectorAll('.footer-nav-links a');
+
+const updateNavLinksColor = () => {
+    const scrollPosition = window.scrollY;
+    document.querySelectorAll('section').forEach((section) => {
+        const sectionId = section.getAttribute('id');
+        const sectionOffset = section.offsetTop - 600;
+
+        if (scrollPosition >= sectionOffset) {
+            navLinks.forEach((link) => link.classList.remove('active'));
+
+            const correspondingNavLink = document.querySelector(`.footer-nav-links a[href="#${sectionId}"]`);
+            if (correspondingNavLink) {
+                correspondingNavLink.classList.add('active');
+            }
+        }
+    });
+};
+
+window.addEventListener('scroll', updateNavLinksColor);
+updateNavLinksColor();
+
+
+
+
