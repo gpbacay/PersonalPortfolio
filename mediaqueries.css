@@ -126,9 +126,13 @@
     display: none;
   }
   #hamburger-nav {
-    height: 0vh;
+    position: sticky;
+    top: 0;
+    height: 50px;
     display: flex;
     z-index: 2;
+    background: rgba(19, 19, 20, 0.1);
+    backdrop-filter: blur(100px);
   }
   #profile,
   .section-container {

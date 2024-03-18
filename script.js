@@ -140,7 +140,7 @@ scrollDownButton.addEventListener('click', () => chatbox.scrollTo(0, chatbox.scr
 chatbox.addEventListener('scroll', toggleScrollButtonVisibility);
 
 
-
+// Functions for the nav bar
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
@@ -235,7 +235,7 @@ setInterval(updateText, 3500);
 // Function for element typing animation
 const startTypingAnimation = target => {
     let iterations = 0;
-    const intervalDuration = 30;
+    const intervalDuration = 20;
     clearInterval(target.interval);
     target.interval = setInterval(() => {
         target.innerText = target.innerText.split("").map((letter, index) => {
@@ -253,7 +253,7 @@ const startTypingAnimation = target => {
 };
 
 document.querySelectorAll(
-    "#about .title, #experience .title, #projects .title, #contact .title")
+    "#about .title, #experience .title, #projects .title, #contact .title, .project-title")
 .forEach(element => {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -282,7 +282,7 @@ const updateNavLinksColor = () => {
     const scrollPosition = window.scrollY;
     document.querySelectorAll('section').forEach((section) => {
         const sectionId = section.getAttribute('id');
-        const sectionOffset = section.offsetTop - 600;
+        const sectionOffset = section.offsetTop - 500;
 
         if (scrollPosition >= sectionOffset) {
             navLinks.forEach((link) => link.classList.remove('active'));
@@ -301,3 +301,25 @@ updateNavLinksColor();
 
 
 
+
+
+
+// Function to check if the top of the experience section has reached the viewport
+const isExperienceSectionInView = () => {
+    const experienceSection = document.getElementById('experience');
+    const rect = experienceSection.getBoundingClientRect();
+    return rect.top <= 1;
+};
+
+// Function to toggle the position of the about section based on the scroll position
+const toggleAboutSectionPosition = () => {
+    const aboutSection = document.getElementById('about');
+    if (isExperienceSectionInView()) {
+        aboutSection.style.position = 'relative';
+    } else {
+        aboutSection.style.position = 'sticky';
+    }
+};
+
+// Event listener for scroll events
+window.addEventListener('scroll', toggleAboutSectionPosition);

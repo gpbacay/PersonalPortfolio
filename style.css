@@ -44,7 +44,7 @@ p {
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-    background: rgba(19, 19, 20, 0.5);
+  background: rgba(19, 19, 20, 0.5);
   backdrop-filter: blur(32px);
 }
 
@@ -133,6 +133,7 @@ p {
 
 /* chat box body without header */
 .chatbot .chatbox {
+  bottom: 100px;
   height: 510px;
   overflow-y: scroll;
   padding: 30px 20px 70px;
@@ -159,10 +160,12 @@ p {
 /* chatbox inner body */
 .chatbox .chat {
   display: flex;
+  margin-bottom: 20px;
 }
 
 /* bot message box */
 .chatbox .incoming p {
+  text-align: justify;
   justify-content: right;
   border-radius: 0 10px 10px 10px;
   max-width: 100%;
@@ -197,7 +200,7 @@ p {
 /* user message box */
 .chatbox .outgoing p {
   border-radius: 10px 0px 10px 10px;
-  max-width: 100%;
+  max-width: 70%;
   font-size: 0.95rem;
   margin: 8px;
   padding: 12px 16px;
@@ -205,6 +208,8 @@ p {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
   background: rgba(30, 31, 32, 0.3);
   backdrop-filter: blur(32px);
+  word-wrap: break-word; /* Breaks long words */
+  overflow-wrap: break-word; /* Allows the text to break between words */
 }
 
 .chatbox .outgoing span img {
@@ -229,8 +234,8 @@ p {
   border-radius: 10px;
   justify-content: center;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
-  background: rgba(30, 31, 32, 0.3);
-  backdrop-filter: blur(32px);
+  background: rgba(30, 31, 32, 0.1);
+  backdrop-filter: blur(2px);
 }
 
 .chat-input textarea {
@@ -310,8 +315,7 @@ a,
   z-index: 2;
 }
 
-nav,
-.nav-links {
+nav, .nav-links {
   display: flex;
 }
 
@@ -320,8 +324,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 0vh;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 15%;
+  padding-right: 15%;
   top: 5vh;
 }
 
@@ -450,9 +454,10 @@ section {
   position: relative;
   display: block;
   padding: 2% 15% 2% 15%;
+  margin: 0vh 0px 0px 0px;
   background: #1a1a1a;
   width: 100%;
-  height: 100%;
+  height: 300vh !important;
 }
 
 .section-container {
@@ -467,10 +472,10 @@ section {
   justify-content: center;
   gap: 5rem;
   width: 100%;
-  height: 100%;
+  height: 100% !important;
   background-size: cover;
   background-position: center;
-  background-image: url('assets/bg1.jpg');
+  background-image: url('assets/bg1.png');
   background-attachment: fixed;
   padding-bottom: 0px !important;
 }
@@ -536,7 +541,7 @@ section {
   display: flex;
   justify-content: flex-start;
   margin-top: 1rem;
-  gap: 2rem;
+  gap: 3rem;
 }
 /* ICONS */
 
@@ -595,10 +600,16 @@ section {
 /* ABOUT SECTION */
 
 #about {
-  margin: 52% 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-attachment: fixed;
   color: rgb(116,83,186);
-  position: sticky;
+  position: relative;
+  height: fit-content !important;
+  max-height: 600vh;
+  margin-top: calc((200vh) / 2);
+  position:sticky;
   top: 0;
 }
 
@@ -617,7 +628,8 @@ section {
 }
 
 .about-details-container {
-  justify-content:center;
+  display: flex;
+  justify-content:center ;
   flex-direction: column;
 }
 
@@ -652,10 +664,12 @@ section {
   text-align: center;
   padding: 1.5rem;
   flex-grow: 1;
-  background: rgb(35,33,44);
+  background: rgba(19, 19, 20, 0.1);
+  backdrop-filter: blur(0px);
   border-radius: 1rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
+  width: 100%;
 }
 
 .color-container {
@@ -673,10 +687,15 @@ section {
 
 #experience {
   color: rgb(116,83,186);
-  display: flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  height: fit-content !important;
   position: relative;
   top: 0;
-  height: fit-content;
+  background: rgba(30, 31, 32, 0.5);
+  backdrop-filter: blur(100px);
 }
 
 .experience-sub-title {
@@ -690,6 +709,23 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#experience .about-containers {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#experience .details-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 #experience .article-container {
@@ -714,15 +750,20 @@ article .icon {
   display: flex;
   flex-direction: column;
   color: rgb(116,83,186);
+  height: fit-content !important;
+  max-height: 1600vh;
   position: relative;
   top: 0;
+  background-size: cover;
+  background-position: center;
+  background-image: url('assets/bg1.png');
+  background-attachment: fixed;
 }
 
 #projects .about-containers {
   display: flex;
   flex-direction: column;
   flex-flow: wrap;
-  overflow: auto;
 }
 
 #projects .details-container {
@@ -742,7 +783,8 @@ article .icon {
 
 .project-title {
   margin: 1rem;
-  color: white;
+  color: aliceblue;
+  font-family: monospace;
 }
 
 .project-description {
@@ -759,12 +801,15 @@ article .icon {
 
 #contact {
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  height: 40vh;
+  justify-content: center;
   color: rgb(116,83,186);
-  /* position: absolute;
-  bottom: 0; */
+  height: 50vh !important;
+  max-height: 600vh !important;
+  position: relative;
+  top: 0;
+  background: rgba(30, 31, 32, 0.5);
+  backdrop-filter: blur(100px);
 }
 
 .contact-info-upper-container {
@@ -826,14 +871,16 @@ footer nav {
   justify-content: center;
   top: 92%;
   bottom: 30%;
-  left: 25%;
-  right: 25%;
+  left: 30%;
+  right: 30%;
   height: 6%;
-  background: rgba(55, 57, 59, 0.8);
-  backdrop-filter: blur(50px);
+  background: rgba(19, 19, 20, 0.1);
+  backdrop-filter: blur(100px);
   animation-duration: 0.15s;
   animation-fill-mode: both;
-  border-radius: 2rem;
+  border-radius: 1rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
   z-index: 2;
   align-self:baseline;
 }
@@ -870,7 +917,7 @@ footer nav {
   display: flex;
   gap: 2rem;
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 1.20rem;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
@@ -890,5 +937,3 @@ footer nav {
   color: rgb(131, 83, 229) !important;
   text-decoration-color: rgb(131, 83, 229) !important;
 }
-
-
