@@ -195,7 +195,9 @@ function isElementVisible(element) {
 // Function for name title typing animation
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 const sectionTextElements = document.querySelectorAll(".section-text, .name-title");
-const texts = ["AI RESEARCHER", "TECH ENTHUSIAST", "TECHNOPRENEUR","IT PROJECT MANAGER", "SOFTWARE ENGINEER", "FULL STACK DEVELOPER"];
+const texts = [
+    "BSIT UNDERGRAD", "AI RESEARCHER", "TECH ENTHUSIAST", "TECHNOPRENEUR", 
+    "IT PROJECT MANAGER", "SOFTWARE ENGINEER", "SYSTEM DEVELOPER"];
 let currentIndex = 0;
 
 const updateTextWithTypingEffect = (element, text) => {
@@ -252,8 +254,7 @@ const startTypingAnimation = target => {
     }, intervalDuration);
 };
 
-document.querySelectorAll(
-    "#about .title, #experience .title, #projects .title, #contact .title, .project-title")
+document.querySelectorAll("#about .title, #experience .title, #projects .title, #contact .title, .project-title")
 .forEach(element => {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
