@@ -254,7 +254,7 @@ const startTypingAnimation = target => {
     }, intervalDuration);
 };
 
-document.querySelectorAll("#about .title, #experience .title, #projects .title, #contact .title, .project-title")
+document.querySelectorAll("#about .title, #experience .title, #projects .title, #contact .title, .project-title, #footer-container p")
 .forEach(element => {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {

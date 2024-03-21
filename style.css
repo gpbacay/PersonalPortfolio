@@ -419,7 +419,7 @@ a:hover {
   padding: 10px;
   text-align: center;
   font-size: 1.5rem;
-  color: white;
+  color: #1a1a1a;
   text-decoration: none;
   transition: all 0.3 ease-in-out;
 }
@@ -714,7 +714,7 @@ section {
   padding-top: 80px;
   background-size: cover;
   background-position: center;
-  background-image: url('assets/bg3.png');
+  background-image: url('assets/bg1.png');
   background-attachment: fixed;
   border: rgb(131, 83, 229) 0.1rem solid;
   border-left: none;
@@ -780,10 +780,10 @@ article .icon {
   top: 0;
   background-size: cover;
   background-position: center;
-  background-image: url('assets/bg3.png');
+  background-image: url('assets/bg1.png');
   background-attachment: fixed;
   padding-top: 80px;
-  border: rgb(255, 255, 255) 0.1rem solid;
+  border: rgb(12, 184, 208) 0.1rem solid;
   border-left: none;
   border-right: none;
   border-bottom: none;
@@ -839,10 +839,10 @@ article .icon {
   top: 0;
   background-size: cover;
   background-position: center;
-  background-image: url('assets/bg2.png');
+  background-image: url('assets/bg4.png');
   background-attachment: fixed;
   padding-top: 80px;
-  border: rgb(131, 83, 229) 0.1rem solid;
+  border: rgb(253,65,142) 0.1rem solid;
 }
 
 .contact-info-upper-container {
@@ -892,13 +892,14 @@ footer p {
   display: inline-block;
   text-align: center;
   font-size: 0.7rem;
+  font-family: monospace;
   padding: 10px;
   width: 100%;
-  color: rgb(160, 135, 213);
+  color: rgb(253,65,142);
   z-index: 1;
   background-size: cover;
   background-position: center;
-  background-image: url('assets/bg3.png');
+  background-image: url('assets/bg1.png');
   background-attachment: fixed;
 }
 
