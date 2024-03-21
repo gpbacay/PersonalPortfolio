@@ -32,8 +32,8 @@ p {
 .chatbot-toggler span {
   position: fixed;
   z-index: 1000;
-  right: 70px;
-  bottom: 15px;
+  right: 4.3vw;
+  bottom: 4.3vh;
   height: 50px;
   width: 50px;
   border: none;
@@ -168,6 +168,10 @@ p {
 }
 
 /* bot message box */
+.chatbox .incoming {
+  margin-bottom: 80px;
+}
+
 .chatbox .incoming p {
   text-align: justify;
   justify-content: right;
@@ -402,7 +406,7 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: rgb(52,41,77);
+  background-color: rgb(131, 83, 229);
   width: fit-content;
   max-height: 0;
   overflow: hidden;
@@ -426,6 +430,7 @@ a:hover {
 
 .menu-links.open {
   max-height: 300px;
+  border: rgb(255, 255, 255) 0.1rem solid;
 }
 
 .hamburger-icon.open span:first-child {
@@ -474,7 +479,7 @@ section {
   position: fixed;
   display: flex;
   justify-content: center;
-  gap: 5rem;
+  gap: 2rem;
   width: 100%;
   height: 100% !important;
   background-size: cover;
@@ -482,12 +487,13 @@ section {
   background-image: url('assets/bg1.png');
   background-attachment: fixed;
   padding-bottom: 0px !important;
+  padding-left: 7rem !important;
 }
 
 .section__pic-container {
   display: flex;
-  height: 300px;
-  width: 300px;
+  height: 260px;
+  width: 260px;
   margin: auto 0;
   flex-flow: column;
 }
@@ -505,14 +511,14 @@ section {
 }
 
 .section__text__p1 {
-  font-size: 1.5rem;
+  font-size: 2vw !important;
   justify-content: start !important;
 }
   
 .section__text h1 {
   position: relative;
   white-space: nowrap;
-  font-size: 5rem;
+  font-size: 4.5rem;
   top: -0.5rem;
 }
 
@@ -534,7 +540,7 @@ section {
   background: linear-gradient(to right, rgb(253,65,142) -20%, rgb(131, 83, 229) 50%, rgb(12, 184, 208)120%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 3rem;
+  font-size: 2.5rem;
   opacity: 1;
   top: 46vh;
 }
@@ -559,7 +565,7 @@ section {
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .btn {
@@ -643,7 +649,7 @@ section {
 }
 
 .text-container {
-  font-size: 1.25rem;
+  font-size: 15px !important;
   text-align: justify;
   margin-top: 20px;
 }
@@ -665,7 +671,7 @@ section {
 }
 
 #about .section__pic-container {
-  margin: 30px 0px 30px 0px;
+  margin: 10px 0px 10px 0px;
 }
 
 .details-container {
@@ -687,11 +693,9 @@ section {
   flex-direction: column;
 }
 .section-container {
-  gap: 4rem;
+  gap: 2rem;
   height: 80%;
   align-items: flex-start;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 /* EXPERIENCE SECTION */
@@ -892,16 +896,19 @@ footer p {
   width: 100%;
   color: rgb(160, 135, 213);
   z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-image: url('assets/bg3.png');
+  background-attachment: fixed;
 }
 
 footer nav {
   position: fixed;
   display: none;
   justify-content: center;
-  top: 92%;
-  bottom: 30%;
-  left: 33%;
-  right: 33%;
+  top: 89vh;
+  left: 28%;
+  right: 28%;
   height: 6%;
   background: rgba(19, 19, 20, 0.4);
   backdrop-filter: blur(50px);

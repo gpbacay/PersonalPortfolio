@@ -110,7 +110,7 @@
   #profile .section__text h1{
     height: fit-content;
     top: 0px;
-    font-size: 10vw;
+    font-size: 5vw;
   }
   #profile .section-text {
     position: relative;
@@ -166,17 +166,18 @@
     display: flex;
     justify-content: center !important;
     top: 2vh;
-    font-size: 4vh;
+    font-size: 2vw !important;
   }
   .section__text h1{
     position: relative;
+    font-size: 5vw;
   }
   .section-text {
     position: relative;
     display: flex;
     justify-content: center !important;
     top: -30px;
-    font-size: 4vw;
+    font-size: 2vw;
     width: 100%;
   }
   .btn-container {
@@ -208,7 +209,26 @@
     padding: 100px;
   }
   .about-containers {
+    display: flex;
     flex-wrap: wrap;
+    flex-direction: row !important;
+  }
+  .text-container {
+    font-size: 1vw;
+  }
+  #about .details-container {
+    width: 1vw;
+    height: fit-content;
+    font-size: 1vw !important;
+    padding: 10px;
+    align-content: center;
+  }
+  #about .details-container img {
+    width: 15px;
+    height: 15px;
+  }
+  #about .details-container p {
+    font-size: 0.9vw;
   }
   #contact,
   #projects {
@@ -218,13 +238,13 @@
   #projects .section__text__p1, #contact .section__text__p1 {
     display: flex;
     justify-content: flex-start !important;
-    font-size: 2rem !important;
+    font-size: 2vw !important;
   }
   #about .title, #experience .title,
   #projects .title, #contact .title {
     display: flex;
     justify-content: flex-start !important;
-    font-size: 4rem !important;
+    font-size: 3vw !important;
   }
 }
 @media screen and (max-width: 1700px) {
