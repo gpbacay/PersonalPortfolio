@@ -519,7 +519,6 @@ section {
   position: relative;
   white-space: nowrap;
   font-size: 4.5rem;
-  top: -0.5rem;
 }
 
 .title {
@@ -716,9 +715,7 @@ section {
   background-position: center;
   background-image: url('assets/bg1.png');
   background-attachment: fixed;
-  border: rgb(131, 83, 229) 0.1rem solid;
-  border-left: none;
-  border-right: none;
+  border: rgb(12, 184, 208) 0.1rem solid;
   border-bottom: none;
 }
 
@@ -780,7 +777,7 @@ article .icon {
   top: 0;
   background-size: cover;
   background-position: center;
-  background-image: url('assets/bg1.png');
+  background-image: url('assets/bg2.png');
   background-attachment: fixed;
   padding-top: 80px;
   border: rgb(12, 184, 208) 0.1rem solid;
