@@ -484,7 +484,7 @@ section {
   height: 100% !important;
   background-size: cover;
   background-position: center;
-  background-image: url('assets/bg1.png');
+  background-image: url('assets/bg4.png');
   background-attachment: fixed;
   padding-bottom: 0px !important;
   padding-left: 7rem !important;
@@ -648,7 +648,7 @@ section {
 }
 
 .text-container {
-  font-size: 15px !important;
+  font-size: 20px !important;
   text-align: justify;
   margin-top: 20px;
 }

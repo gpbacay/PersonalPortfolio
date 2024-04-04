@@ -225,7 +225,7 @@
     flex-direction: row !important;
   }
   .text-container {
-    font-size: 1vw;
+    font-size: 2vw;
   }
   #about .details-container {
     width: 1vw;
@@ -266,7 +266,7 @@
 @media screen and (max-width: 2500px) {
   .section-text {
     position: relative;
-    top: -20px;
+    top: -10px;
   }
 }
 
