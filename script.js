@@ -324,3 +324,14 @@ const toggleAboutSectionPosition = () => {
 
 // Event listener for scroll events
 window.addEventListener('scroll', toggleAboutSectionPosition);
+
+
+
+
+
+
+
+
+
+
+

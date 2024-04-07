@@ -213,6 +213,15 @@
   .project-description {
     margin-bottom: 1.5rem;
   }
+  .contact-info-upper-container {
+    width: fit-content;
+  }
+  .contact-info-lower-container {
+    width: 500px;
+  }
+  .contact-form {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 1400px) {
   #profile {
