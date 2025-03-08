@@ -148,9 +148,6 @@ function navigateToProjects() {
   window.location.href = '#projects';
 }
 
-function navigateToContact() {
-  window.location.href = '#contact';
-}
 
 window.addEventListener("scroll", () => {
     const isDesktopNavVisible = isElementVisible(desktopNav);
