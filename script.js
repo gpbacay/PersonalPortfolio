@@ -1,4 +1,4 @@
-import ollama from 'ollama';
+import ollama from 'ollama/browser';
 
 const chatInput = document.querySelector(".chat-input textarea");
 const chatbox = document.querySelector(".chatbox");
