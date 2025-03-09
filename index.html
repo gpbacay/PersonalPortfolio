@@ -408,7 +408,7 @@
       </div>
     </div>
     <div class="contact-info-lower-container">
-      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+      <form id="form_id" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
         <div class="contact-form-title">
           <h2>Get in touch</h2>
           <hr>
@@ -418,8 +418,8 @@
         <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required/>
         <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
 
-        <!-- <div class="h-captcha" data-sitekey="b9a85b8a-9b2a-496e-950e-c37cc4c83618"></div>
-        <script src="https://js.hcaptcha.com/1/api.js" async defer></script> -->
+        <div class="h-captcha" data-captcha="true" data-sitekey="b9a85b8a-9b2a-496e-950e-c37cc4c83618"></div>
+        <script src="https://web3forms.com/client/script.js" async defer></script>
         <button type="submit">Submit <img src="assets/send_email_icon.png" alt="Send Icon"></button>
       </form>
       
@@ -443,6 +443,20 @@
     <p data-value="&#169; 2024 GIANNE BACAY. ALL RIGHTS RESERVED.">&#169; 2024 GIANNE BACAY. ALL RIGHTS RESERVED.</p>
   </footer> <!-- end of footer -->
 
+  <script>
+    const form = document.getElementById('form_id');
+    
+    form.addEventListener('submit', function(e) {
+    
+        const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+    
+        if (!hCaptcha) {
+            e.preventDefault();
+            alert("Please fill out captcha field")
+            return
+        }
+    });
+    </script>
   <script src="script.js"></script>
 </body>
 
