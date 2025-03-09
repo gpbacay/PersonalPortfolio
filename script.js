@@ -10,6 +10,25 @@ const desktopNav = document.getElementById("desktop-nav");
 const footerNav = document.querySelector(".footer-nav");
 
 
+// Node.js example
+const axios = require('axios');
+
+async function verifyCaptcha(token) {
+  const response = await axios.post('https://hcaptcha.com/siteverify', {
+    secret: 'ES_54c11092ee6b4e528da600055be98508',
+    response: token
+  });
+  return response.data.success;
+}
+
+// In your route handler
+const isValidCaptcha = await verifyCaptcha(req.body['h-captcha-response']);
+if (!isValidCaptcha) {
+  return res.status(400).json({ error: "Invalid captcha" });
+}
+
+
+
 let userMessage;
 const API_KEY = "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"
 const inputInitHeight = chatInput.scrollHeight;
@@ -328,22 +347,7 @@ window.addEventListener('scroll', toggleAboutSectionPosition);
 
 
 
-// Node.js example
-const axios = require('axios');
 
-async function verifyCaptcha(token) {
-  const response = await axios.post('https://hcaptcha.com/siteverify', {
-    secret: 'ES_54c11092ee6b4e528da600055be98508',
-    response: token
-  });
-  return response.data.success;
-}
-
-// In your route handler
-const isValidCaptcha = await verifyCaptcha(req.body['h-captcha-response']);
-if (!isValidCaptcha) {
-  return res.status(400).json({ error: "Invalid captcha" });
-}
 
 
 
