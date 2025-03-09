@@ -418,12 +418,8 @@
         <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required/>
         <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
 
-        <div class="h-captcha" 
-          data-sitekey="b9a85b8a-9b2a-496e-950e-c37cc4c83618" 
-          data-callback="onHCaptchaSuccess" 
-          data-error-callback="onHCaptchaError"></div>
-        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
-        <button type="submit">Submit <img src="assets/send_email_icon.png"></button>
+        <div class="h-captcha" data-sitekey="b9a85b8a-9b2a-496e-950e-c37cc4c83618"></div>
+        <button type="submit">Submit <img src="assets/send_email_icon.png" alt="Send Icon"></button>
       </form>
       
     </div>
@@ -446,16 +442,7 @@
     <p data-value="&#169; 2024 GIANNE BACAY. ALL RIGHTS RESERVED.">&#169; 2024 GIANNE BACAY. ALL RIGHTS RESERVED.</p>
   </footer> <!-- end of footer -->
 
-  <script src="script.js">
-    // Optional: Add hCaptcha callbacks
-    function onHCaptchaSuccess(token) {
-      console.log('hCaptcha verified');
-    }
-
-    function onHCaptchaError(token) {
-      console.error('hCaptcha error');
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
