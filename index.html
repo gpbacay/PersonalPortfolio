@@ -395,70 +395,36 @@
   <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
     <h1 class="title" data-value="CONTACT ME">CONTACT ME</h1>
-    
     <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-            <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-            <p><a href="mailto:giannebacay2004@gmail.com">giannebacay2004@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-            <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-            <p>
-                <a onclick="window.open('https://www.linkedin.com/in/gianne-bacay-195527290/', '_blank')">LinkedIn</a>
-            </p>
-        </div>
+      <div class="contact-info-container">
+        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+        <p><a href="mailto:examplemail@gmail.com">giannebacay2004@gmail.com</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+        <p>
+          <a onclick="window.open('https://www.linkedin.com/in/gianne-bacay-195527290/', '_blank')">LinkedIn</a>
+        </p>
+      </div>
     </div>
-
     <div class="contact-info-lower-container">
-        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-            <!-- Web3Forms Required Fields -->
-            <input type="hidden" name="access_key" value="a013203e-9497-4327-9458-407ae1c7aa57">
-            <input type="hidden" name="subject" value="New Contact Form Submission">
-            <input type="checkbox" name="botcheck" style="display: none !important;">
+      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <div class="contact-form-title">
+          <h2>Get in touch</h2>
+          <hr>
+        </div>
+        <input type="hidden" name="access_key" value="a013203e-9497-4327-9458-407ae1c7aa57">
+        <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required/>
+        <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required/>
+        <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
 
-            <div class="contact-form-title">
-                <h2>Get in touch</h2>
-                <hr>
-            </div>
-
-            <!-- Form Inputs -->
-            <input type="text" 
-                   name="name" 
-                   placeholder="Your Name" 
-                   class="contact-inputs" 
-                   required
-                   aria-label="Your Name">
-            
-            <input type="email" 
-                   name="email" 
-                   placeholder="Your Email" 
-                   class="contact-inputs" 
-                   required
-                   aria-label="Your Email">
-            
-            <textarea name="message" 
-                      placeholder="Your Message" 
-                      class="contact-inputs" 
-                      required
-                      aria-label="Your Message"></textarea>
-
-            <!-- hCaptcha Integration -->
-            <div class="h-captcha" 
-                 data-sitekey="b9a85b8a-9b2a-496e-950e-c37cc4c83618"
-                 data-callback="onCaptchaSuccess"
-                 data-error-callback="onCaptchaError"
-                 aria-label="hCaptcha Verification"></div>
-            
-            <!-- hCaptcha Script -->
-            <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
-
-            <!-- Submit Button -->
-            <button type="submit" class="submit-btn">
-                Submit <img src="assets/send_email_icon.png" alt="Send Icon">
-            </button>
-        </form>
+        <!-- <div class="h-captcha" data-sitekey="b9a85b8a-9b2a-496e-950e-c37cc4c83618"></div>
+        <script src="https://js.hcaptcha.com/1/api.js" async defer></script> -->
+        <button type="submit">Submit <img src="assets/send_email_icon.png" alt="Send Icon"></button>
+      </form>
+      
     </div>
-</section>
+  </section> <!-- end of contact section -->
 
   <footer id="footer-container">
     <nav class="footer-nav">
@@ -477,16 +443,6 @@
     <p data-value="&#169; 2024 GIANNE BACAY. ALL RIGHTS RESERVED.">&#169; 2024 GIANNE BACAY. ALL RIGHTS RESERVED.</p>
   </footer> <!-- end of footer -->
 
-  <!-- hCaptcha Callback Script -->
-  <script>
-    function onCaptchaSuccess(token) {
-        console.log('hCaptcha verification successful:', token);
-    }
-
-    function onCaptchaError(token) {
-        console.error('hCaptcha verification failed:', token);
-    }
-  </script>
   <script src="script.js"></script>
 </body>
 
