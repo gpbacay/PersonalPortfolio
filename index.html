@@ -45,7 +45,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Contacts</a></li>
       </ul>
     </div>
   </nav>
@@ -64,7 +64,7 @@
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
         <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
         <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contacts</a></li>
       </div>
     </div>
   </nav>
@@ -456,36 +456,47 @@
 
   <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title" data-value="CONTACT ME">CONTACT ME</h1>
-    <div class="contact-info-upper-container">
-      <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-        <p><a href="mailto:examplemail@gmail.com">giannebacay2004@gmail.com</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p>
-          <a onclick="window.open('https://www.linkedin.com/in/gianne-bacay-195527290/', '_blank')">LinkedIn</a>
-        </p>
-      </div>
-    </div>
-    <div class="contact-info-lower-container">
-      <form id="form_id" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-        <div class="contact-form-title">
-          <h2>Get in touch</h2>
-          <hr>
-        </div>
-        <input type="hidden" name="access_key" value="324ede50-1bca-42e5-9ab3-ba70bd54739c">
-        <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required/>
-        <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required/>
-        <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+    <h1 class="title" data-value="CONTACTS">CONTACTS</h1>
 
-        <div class="h-captcha" data-captcha="true"></div>
-        <script src="https://web3forms.com/client/script.js" async defer></script>
-        <button type="submit">Submit <img src="assets/send_email_icon.png" alt="Send Icon"></button>
-      </form>
-      
-    </div>
+    <div class="contacts-wrapper">
+      <div class="contact-info-upper-container">
+        <div id="socials-container">
+          <img src="./assets/facebook.png" alt="My LinkedIn profile" class="icon"
+            onclick="window.open('https://www.facebook.com/GianneBacay', '_blank')" />
+          <img src="./assets/tiktok.png" alt="My LinkedIn profile" class="icon"
+            onclick="window.open('https://www.tiktok.com/@gpbacay', '_blank')" />
+          <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
+            onclick="window.open('https://www.linkedin.com/in/gianne-bacay-195527290/', '_blank')" />
+          <img src="./assets/github.png" alt="My Github profile" class="icon"
+            onclick="window.open('https://github.com/gpbacay', '_blank')" />
+          <img src="./assets/medium.png" alt="My Github profile" class="icon"
+            onclick="window.open('https://medium.com/@giannebacay2004', '_blank')" />
+        </div> <!-- end of div socials-container -->
+      </div>
+
+      <div class="contact-info-lower-container">
+        <form id="form_id" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+          <div class="contact-form-title">
+            <h2>Email Me</h2>
+            <hr>
+          </div>
+          <input type="hidden" name="access_key" value="324ede50-1bca-42e5-9ab3-ba70bd54739c">
+          <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required/>
+          <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required/>
+          <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+  
+          <div class="h-captcha" data-captcha="true"></div>
+          <script src="https://web3forms.com/client/script.js" async defer></script>
+          <button type="submit">Submit <img src="assets/send_email_icon.png" alt="Send Icon"></button>
+        </form>
+      </div> <!-- end of contact-info-lower-container -->
+    </div> <!-- end of contacts-wrapper -->
+
+    <div class="contact-info-container">
+      <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+      <p><a href="mailto:giannebacay2004@gmail.com">giannebacay2004@gmail.com</a></p>
+    </div> <!-- end of contact-info-container -->
+    
   </section> <!-- end of contact section -->
 
   <footer id="footer-container">
@@ -498,7 +509,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Contacts</a></li>
         </ul>
       </div>
     </nav>
