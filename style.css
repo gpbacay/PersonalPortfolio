@@ -691,7 +691,8 @@ section {
   align-items: center;
   flex-direction: column;
 }
-.section-container {
+
+#about .section-container {
   gap: 2rem;
   height: 80%;
   align-items: flex-start;
@@ -794,6 +795,9 @@ article .icon {
 
 #projects .details-container {
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .color-container {

@@ -193,10 +193,10 @@ function isElementVisible(element) {
 
 
 // Function for name title typing animation
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901010101010101010101010101010101010101010101010101010101010101010";
 const sectionTextElements = document.querySelectorAll(".section-text, .name-title");
 const texts = [
-    "BSIT UNDERGRAD", "AI RESEARCHER", "TECH ENTHUSIAST", "TECHNOPRENEUR", 
+    "AI ENGINEER","ML SCIENTIST", "AI RESEARCHER", "TECHNOPRENEUR", 
     "IT PROJECT MANAGER", "SOFTWARE ENGINEER", "SYSTEM DEVELOPER"];
 let currentIndex = 0;
 
@@ -210,7 +210,7 @@ const updateTextWithTypingEffect = (element, text) => {
             if (index < iterations) {
                 return text[index];
             }
-            return letters[Math.floor(Math.random() * 36)];
+            return letters[Math.floor(Math.random() * 100)];
         }).join("");
 
         if (iterations >= text.length) { 
