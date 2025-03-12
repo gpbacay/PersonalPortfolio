@@ -254,7 +254,7 @@ const startTypingAnimation = target => {
     }, intervalDuration);
 };
 
-document.querySelectorAll("#about .title, #experience .title, #projects .title, #contact .title, .project-title, #footer-container p")
+document.querySelectorAll("#about .title, #experience .title, #projects .title, #contact .title, .project-title")
 .forEach(element => {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -325,7 +325,8 @@ const toggleAboutSectionPosition = () => {
 // Event listener for scroll events
 window.addEventListener('scroll', toggleAboutSectionPosition);
 
-
+// Dynamically update the year in the footer
+document.getElementById("current-year").textContent = new Date().getFullYear();
 
 
 
