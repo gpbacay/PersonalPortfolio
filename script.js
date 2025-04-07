@@ -1,4 +1,13 @@
-const chatInput = document.querySelector(".chat-input textarea");
+const express = require('express');
+const app = express();
+
+// Add a new route handler for the /ollama endpoint.
+app.get('/ollama', (req, res) => {
+    // Respond with data or a success message.
+    res.send('Ollama endpoint is working!');
+});
+
+    const chatInput = document.querySelector(".chat-input textarea");
 const chatbox = document.querySelector(".chatbox");
 const sendChatBtn = document.querySelector(".chat-input span img");
 const chatbotToggler = document.querySelector(".chatbot-toggler");
