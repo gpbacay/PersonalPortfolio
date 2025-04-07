@@ -9,9 +9,8 @@ const scrollDownButton = document.querySelector('.scroll-down-button');
 const desktopNav = document.getElementById("desktop-nav");
 const footerNav = document.querySelector(".footer-nav");
 
-
 let userMessage;
-const API_KEY = "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"
+
 const inputInitHeight = chatInput.scrollHeight;
 const chatInputContainerInitHeight = chatInputContainer.scrollHeight;
 
@@ -26,45 +25,33 @@ const createChatLi = (message, className) => {
 }
 
 const generateResponse = async (incomingChatLi) => {
-    const API_URL = "https://api.openai.com/v1/chat/completions";
     const messageElement = incomingChatLi.querySelector("p");
 
-    //Define the properties and message for the API request
-    const requestOptions = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${API_KEY}`
-        },
-        body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages: [{role:"user",content:userMessage}]
-        }),
-    }
-    
-    // Send POST request to API, get response
-    fetch(API_URL, requestOptions)
-    .then(res => res.json())
-    .then(data => {
-        if (
-            data.choices && 
-            data.choices.length > 0 && 
-            data.choices[0].message
-        ) {
-            messageElement.textContent = data.choices[0].message.content;
+    try {
+        // Call Ollama with the actual API
+        const response = await ollama.chat({
+            model: 'llama2',
+            messages: [
+                { role: 'system', content: 'You are a helpful assistant.' },
+                { role: 'user', content: userMessage }
+            ],
+        });
+
+        if (response?.message?.content) {
+            messageElement.textContent = response.message.content;
         } else {
-            console.error("Error: Unexpected response format:", data);
+            console.error("Error: Unexpected response format:", response);
             messageElement.classList.add("error");
-            messageElement.textContent = "Oops! Unexpected response from the server. Please try again.";
+            messageElement.textContent = "Oops! Unexpected response from the model. Please try again.";
         }
-    })
-    .catch((error) => {
+    } catch (error) {
         console.error("Error:", error);
         messageElement.classList.add("error");
         messageElement.textContent = "Oops! Something went wrong. Please try again.";
-    })
-    .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
-}
+    } finally {
+        chatbox.scrollTo(0, chatbox.scrollHeight);
+    }
+};
 
 const handleChat = () => {
     userMessage = chatInput.value.trim();
@@ -303,8 +290,6 @@ updateNavLinksColor();
 
 
 
-
-
 // Function to check if the top of the experience section has reached the viewport
 const isExperienceSectionInView = () => {
     const experienceSection = document.getElementById('experience');
@@ -327,11 +312,3 @@ window.addEventListener('scroll', toggleAboutSectionPosition);
 
 // Dynamically update the year in the footer
 document.getElementById("current-year").textContent = new Date().getFullYear();
-
-
-
-
-
-
-
-
